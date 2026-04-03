@@ -100,7 +100,7 @@ python -c "from config import config; print('✓ Config loaded successfully')"
 **任务 3: 学习 LLM 参数** 
 
 阅读材料（30min）：
-- Anthropic 官方文档关于参数的部分: https://docs.anthropic.com/claude/reference/api-overview
+- Anthropic 官方文档关于参数的部分: https://platform.claude.com/docs/en/api/messages
 - 重点: Temperature, Max Tokens, Top-P
 
 创建学习笔记 `notes/01-llm-basics.md`：
