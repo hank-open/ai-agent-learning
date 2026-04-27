@@ -77,6 +77,7 @@ def multi_turn_conversation():
     print(f"\n注意: 第3轮的 input tokens={response_3.usage.input_tokens}，")
     print(f"比第1轮 input tokens={response_1.usage.input_tokens} 多很多，")
     print(f"因为每轮都要把完整历史传入！")
+    
 
 if __name__ == "__main__":
     multi_turn_conversation()
