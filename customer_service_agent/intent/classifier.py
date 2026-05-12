@@ -143,13 +143,11 @@ def classify(
         max_tokens=500,
         system=system,
         tools=[INTENT_TOOL],
-        tool_choice={"type": "auto"},
+        tool_choice={"type": "any"},
         messages=messages,
     )
 
-    # 解析 tool_use 输出
     raw = _extract_tool_call(response)
-
     # 构建 IntentResult（Pydantic 会做类型校验）
     result = IntentResult(
         domain=raw["domain"],
@@ -166,7 +164,6 @@ def classify(
             for s in raw.get("secondary_intents", [])
         ],
     )
-
     # 追问决策：必填槽位缺失 → 标记需要追问
     missing = get_missing_required_slots(result.intent, result.slots)
     if missing or result.confidence < 0.5:
